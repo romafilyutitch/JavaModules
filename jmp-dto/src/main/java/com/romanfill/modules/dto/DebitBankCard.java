@@ -1,4 +1,4 @@
-package com.romanfill.modules.dto.impl;
+package com.romanfill.modules.dto;
 
 import com.romanfill.modules.dto.BankCard;
 import com.romanfill.modules.dto.User;

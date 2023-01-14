@@ -13,11 +13,14 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 import java.util.Optional;
+import java.util.ServiceLoader;
 
 public class App {
     public static void main(String[] args) {
-        final Bank bank = new DefaultBank();
-        final Service service = new DefaultService();
+        ServiceLoader<Bank> bankServiceLoader = ServiceLoader.load(Bank.class);
+        ServiceLoader<Service> serviceServiceLoader = ServiceLoader.load(Service.class);
+        final Bank bank = bankServiceLoader.findFirst().get();
+        final Service service = serviceServiceLoader.findFirst().get();
         final User roman = new User("Roman", "Filiyutich", LocalDate.of(1999, Month.MARCH, 5));
         final User james = new User("James", "Baley", LocalDate.of(1990, Month.AUGUST, 20));
         final User john = new User("John", "Tompson", LocalDate.of(2000, Month.APRIL, 15));

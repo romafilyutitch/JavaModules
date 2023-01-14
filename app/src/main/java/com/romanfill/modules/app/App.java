@@ -35,6 +35,11 @@ public class App {
         allUsers.forEach(System.out::println);
 
         final Optional<Subscription> optionalSub = service.getSubscriptionByBankCardNumber(romansBankCard.getNumber());
-        optionalSub.ifPresent(subscription -> System.out.println("Subscription found: " + subscription));
+        try {
+            final Subscription foundSubscription = optionalSub.orElseThrow(SubscriptionNotFoundException::new);
+            System.out.println("Subscription found: " + foundSubscription);
+        } catch (SubscriptionNotFoundException exception) {
+            System.out.println("Subscription not found");
+        }
     }
 }

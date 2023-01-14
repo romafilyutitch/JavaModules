@@ -17,15 +17,15 @@ public class DefaultService implements Service {
 
     @Override
     public void subscribe(BankCard bankCard) {
-        final Subscription subscription = new Subscription(bankCard.getNumber(), LocalDate.now());
-        final User user = bankCard.getUser();
+        final var subscription = new Subscription(bankCard.getNumber(), LocalDate.now());
+        final var user = bankCard.getUser();
         subscriptions.add(subscription);
         users.add(user);
     }
 
     @Override
     public Optional<Subscription> getSubscriptionByBankCardNumber(String cardNumber) {
-        for (Subscription subscription : subscriptions) {
+        for (var subscription : subscriptions) {
             if (subscription.getBankcard().equals(cardNumber)) {
                 return Optional.of(subscription);
             }

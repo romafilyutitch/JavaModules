@@ -1,4 +1,7 @@
-package com.romanfill.modules.dto;
+package com.romanfill.modules.dto.impl;
+
+import com.romanfill.modules.dto.BankCard;
+import com.romanfill.modules.dto.User;
 
 public class DebitBankCard extends BankCard {
 

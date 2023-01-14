@@ -41,5 +41,9 @@ public class App {
         } catch (SubscriptionNotFoundException exception) {
             System.out.println("Subscription not found");
         }
+
+        final List<Subscription> thisYearSubscriptions = service.getAllSubscriptionsByCondition(subscription -> subscription.getStartDate().getYear() == LocalDate.now().getYear());
+        System.out.println("Subscriptions which have been made this year: ");
+        thisYearSubscriptions.forEach(System.out::println);
     }
 }

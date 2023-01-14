@@ -25,12 +25,9 @@ public class DefaultService implements Service {
 
     @Override
     public Optional<Subscription> getSubscriptionByBankCardNumber(String cardNumber) {
-        for (var subscription : subscriptions) {
-            if (subscription.getBankcard().equals(cardNumber)) {
-                return Optional.of(subscription);
-            }
-        }
-        return Optional.empty();
+        return subscriptions.stream()
+                .filter(subscription -> subscription.getBankcard().equals(cardNumber))
+                .findAny();
     }
 
     @Override

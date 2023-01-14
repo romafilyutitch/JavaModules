@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class DefaultService implements Service {
 
@@ -32,6 +33,6 @@ public class DefaultService implements Service {
 
     @Override
     public List<User> getAllUsers() {
-        return users;
+        return users.stream().collect(Collectors.toUnmodifiableList());
     }
 }

@@ -1,7 +1,9 @@
 package com.romanfill.modules.bank.impl;
 
 import com.romanfill.modules.api.Bank;
-import com.romanfill.modules.dto.*;
+import com.romanfill.modules.dto.BankCard;
+import com.romanfill.modules.dto.BankCardType;
+import com.romanfill.modules.dto.User;
 
 import java.util.Random;
 import java.util.function.BiFunction;

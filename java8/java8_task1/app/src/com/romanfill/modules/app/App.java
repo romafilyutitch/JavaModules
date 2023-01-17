@@ -1,7 +1,10 @@
 package com.romanfill.modules.app;
 
 import com.romanfill.modules.api.Bank;
-import com.romanfill.modules.dto.*;
+import com.romanfill.modules.dto.BankCard;
+import com.romanfill.modules.dto.BankCardType;
+import com.romanfill.modules.dto.Subscription;
+import com.romanfill.modules.dto.User;
 import com.romanfill.modules.service.api.Service;
 
 import java.time.LocalDate;
